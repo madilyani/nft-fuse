@@ -1,0 +1,418 @@
+.intro {
+  padding: 150px 0;
+  position: relative;
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    background: url(../images/Wave.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 40%;
+  }
+  &__inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  p {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+@mixin intro1024 {
+  .intro {
+    padding: 100px 0;
+    h1 {
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    .button {
+      max-width: 220px;
+    }
+  }
+}
+@mixin intro650 {
+  .intro {
+    h1 {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+.video {
+  padding: 50px 0;
+  &__inner {
+    &-banner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100vw - 120px);
+      height: calc((100vw - 120px) * 0.61);
+      max-width: 1180px;
+      max-height: 720px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+        @include transition;
+        z-index: 1;
+      }
+
+      &.paused {
+        &::before {
+          opacity: 0;
+        }
+      }
+
+      video {
+        @include fullImage;
+        background: $gray;
+      }
+
+      video[poster] {
+        @include fullImage;
+        object-fit: fill;
+      }
+
+      .videoPlay {
+        background: #fff;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        @include transform;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition;
+        z-index: 3;
+
+        &::before {
+          z-index: -1;
+          width: 85px;
+          height: 85px;
+          position: absolute;
+          content: "";
+          left: 50%;
+          top: 50%;
+          @include transform;
+          background: rgba($color: #fff, $alpha: 0.3);
+          border-radius: 50%;
+        }
+        span {
+          margin-left: 3px;
+          border: 0;
+          background: transparent;
+          box-sizing: border-box;
+          width: 0;
+          height: 20px;
+          display: block;
+          border-color: transparent transparent transparent $main;
+          transition: 100ms all ease;
+          pointer-events: none;
+          border-style: solid;
+          border-width: 10px 0 10px 20px;
+        }
+        &.paused {
+          opacity: 0;
+
+          span {
+            margin-left: 0;
+            border-style: double;
+            border-width: 0px 0 0px 15px;
+          }
+        }
+      }
+    }
+  }
+  h3 {
+    color: $main;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+@mixin video1024 {
+  .video {
+    &__inner {
+      &-banner {
+        width: calc(100vw - 60px);
+        height: calc((100vw - 60px) * 0.576);
+      }
+    }
+  }
+}
+@mixin video860 {
+  .video {
+    padding: 25px 0 0 0;
+    &__inner {
+      &-banner {
+        width: calc(100vw - 40px);
+        height: calc((100vw - 40px) * 0.576);
+      }
+    }
+  }
+}
+@mixin video650 {
+  .video {
+    &__inner {
+      &-banner {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+.why {
+  background: $white;
+  padding: 50px 0;
+  &__inner {
+    &-arrow {
+      margin: 0 auto;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 50px -20px 0 -20px;
+    }
+    &-column {
+      width: calc(50% - 40px);
+      margin: 20px;
+      background: $gray;
+      box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      box-sizing: border-box;
+      &-nft {
+        width: 150px;
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+      }
+      &-content {
+        width: calc(100% - 180px);
+        h3 {
+          color: $main;
+          margin-bottom: 20px;
+          font-family: $font-secondary;
+          font-weight: 400;
+        }
+        p {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 15px;
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  p {
+    max-width: 840px;
+    margin: 0 auto 15px auto;
+  }
+  .center {
+    text-align: center;
+  }
+}
+@mixin why1024 {
+  .why {
+    &__inner {
+      &-row {
+        margin: 30px -10px 0 -10px;
+      }
+      &-column {
+        margin: 10px;
+        width: calc(50% - 20px);
+        padding: 15px;
+        border-radius: 5px;
+        &-nft {
+          width: 120px;
+          margin-right: 15px;
+        }
+        &-content {
+          width: calc(100% - 135px);
+        }
+      }
+    }
+    h3 {
+      margin-bottom: 2px;
+    }
+  }
+}
+@mixin why860 {
+  .why {
+    &__inner {
+      &-row {
+        margin: 0;
+      }
+      &-column {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+.price {
+  padding: 50px 0;
+  &__inner {
+    &-row {
+      display: flex;
+      margin: 0 auto 50px auto;
+      max-width: 1240px;
+    }
+    &-column {
+      box-sizing: border-box;
+      padding: 25px;
+      width: calc(33.3% - 30px);
+      margin: 0 15px;
+      border-radius: 10px;
+      background: $gray;
+      box-shadow: 0px 10px 35px -8px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 0px 10px 35px -8px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 10px 35px -8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      h3 {
+        font-family: $font-secondary;
+        text-align: center;
+        margin-bottom: 10px !important;
+      }
+      h2 {
+        color: $black-1 !important;
+        margin-bottom: 10px !important;
+      }
+      p {
+        padding: 60px 15px;
+        font-weight: 600;
+      }
+      &-footer {
+        position: absolute;
+        bottom: 25px;
+        font-style: italic;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        color: $black-1;
+        font-family: $font-secondary;
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: $main;
+  }
+  .center-footer {
+    text-align: center;
+    font-weight: 600;
+  }
+  .button {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    max-width: 240px;
+    font-weight: 400;
+    font-family: $font-secondary;
+    span {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      @include transformX;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      color: $black-1;
+      font-size: 16px;
+      line-height: 20px;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+  }
+}
+@mixin price1024 {
+  .price {
+    &__inner {
+      &-column {
+        border-radius: 5px;
+        p {
+          padding: 45px 0;
+        }
+      }
+    }
+    .button {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+@mixin price860 {
+  .price {
+    h2 {
+      margin-bottom: 20px;
+    }
+    &__inner {
+      &-row {
+        margin: 0;
+        flex-direction: column;
+      }
+      &-column {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+    .center-footer {
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.footer {
+  border-top: 2px solid $black-1;
+  &__inner {
+    display: flex;
+    padding: 50px 0;
+    &-column {
+      &-link {
+        display: block;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+        color: $black-1;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+        @include transition;
+        &:hover {
+          color: $main;
+        }
+      }
+      margin-right: 50px;
+    }
+  }
+  &__copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 0;
+    position: relative;
+    &-social {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $black-1;
+    }
+    &-abs {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      font-family: $font-secondary;
+      color: $black-1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform;
+    }
+    &-text {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      color: $black-1;
+    }
+    &-link {
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $black-1;
+    }
+  }
+}
+@mixin footer1024 {
+  .footer {
+    &__inner {
+      padding: 30px 0;
+      &-column {
+        &-link {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    &__copy {
+      flex-direction: column;
+      padding: 15px 0;
+      &-text {
+        order: 4;
+        letter-spacing: 0;
+      }
+      &-link {
+        order: 2;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 24px;
+      }
+      &-abs {
+        order: 1;
+        letter-spacing: 0;
+        position: unset;
+        @include transformReset;
+      }
+      &-social {
+        position: unset;
+        order: 3;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 24px;
+      }
+    }
+  }
+}
+@mixin footer650 {
+  .footer {
+    &__inner {
+      flex-direction: column;
+      &-column {
+        margin: 0 0 20px 0;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    &__copy {
+      &-text {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.header {
+  padding: 20px 0;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .auto__container {
+    max-width: 1640px;
+    padding: 0 20px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-logo {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 800;
+      color: $black-1;
+      letter-spacing: 2px;
+      span {
+        color: $main;
+      }
+    }
+  }
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $white;
+    animation: 0.2s linear sticky;
+  }
+}
+@keyframes sticky {
+  0% {
+    top: -60px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

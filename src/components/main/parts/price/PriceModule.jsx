@@ -1,0 +1,32 @@
+export const priceItems = [
+  {
+    id: "priceItem-1",
+    subtitle: "Assets Generated",
+    title: "UP TO",
+    price: "free",
+    abs: "",
+    number: "333",
+    small: "per collection",
+    text: "333 unique assets unlimited previews auto-generated ETH or SOL Metadata GIF Generation Banner Collage Includes Watermark Chat Support",
+  },
+  {
+    id: "priceItem-2",
+    subtitle: "Assets Generated",
+    number: "2,500",
+    price: "0.022 ETH",
+    small: "per collection",
+    title: "UP TO",
+    abs: "pay with card or crypto",
+    text: "2,500 unique assets Unlimited previews Auto-generated ETH or SOL Metadata GIF Generation Banner Collage No Watermark Priority Chat Support",
+  },
+  {
+    id: "priceItem-3",
+    subtitle: "Assets Generated",
+    number: "10,000",
+    small: "per collection",
+    price: "0.069 ETH",
+    abs: "pay with card or crypto",
+    title: "UP TO",
+    text: "10,000 unique assets Unlimited previews Auto-generated ETH or SOL Metadata GIF Generation Banner Collage No Watermark Priority Chat Support",
+  },
+];
