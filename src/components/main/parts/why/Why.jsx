@@ -1,10 +1,11 @@
 import React from "react";
 import WhyItem from "./WhyItem";
-import {whyItems} from "./WhyModule";
+import { whyItems } from "./WhyModule";
 
 export default function Why() {
   return (
     <section className="why">
+      <div className="anchor" id="why"></div>
       <div className="auto__container">
         <div className="why__inner">
           <h3 className="center">why you’ll like us</h3>

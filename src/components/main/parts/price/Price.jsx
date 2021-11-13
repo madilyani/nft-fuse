@@ -5,6 +5,7 @@ import { priceItems } from "./PriceModule";
 export default function Price() {
   return (
     <section className="price">
+      <div className="anchor" id="price"></div>
       <div className="auto__container">
         <div className="price__inner">
           <h2>Affordable Pricing</h2>

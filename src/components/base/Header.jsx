@@ -17,18 +17,18 @@ export default function Header() {
     <header className="header" id="header">
       <div className="auto__container">
         <div className="header__inner">
-          <a href="/" className="header__inner-logo">
+          <a href="#intro" className="header__inner-logo">
             nft<span>FUSE</span>
           </a>
           <nav className={"nav " + (menu ? "active" : "")} id="menu">
             <div className="nav__inner">
-              <a href="/" className="nav__inner-link">
+              <a href="#why" className="nav__inner-link">
                 Features
               </a>
-              <a href="/" className="nav__inner-link">
+              <a href="#price" className="nav__inner-link">
                 Pricing
               </a>
-              <a href="/" className="nav__inner-link">
+              <a href="#footer" className="nav__inner-link">
                 About
               </a>
               <a href="/" className="button button-primary">

@@ -3,6 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="footer">
+      <div className="anchor" id="footer"></div>
       <div className="auto__container">
         <div className="footer__inner">
           <div className="footer__inner-column">

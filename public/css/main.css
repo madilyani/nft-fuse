@@ -355,6 +355,14 @@ p {
     opacity: 1;
   }
 }
+.anchor {
+  position: relative;
+  top: -150px;
+  height: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
 .nav__inner-link {
   margin-right: 20px;
   font-size: 22px;

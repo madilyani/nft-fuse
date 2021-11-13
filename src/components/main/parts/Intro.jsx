@@ -3,6 +3,7 @@ import React from "react";
 export default function Intro() {
   return (
     <section className="intro">
+      <div className="anchor" id="intro"></div>
       <div className="auto__container">
         <div className="intro__inner">
           <h1>
